@@ -28,8 +28,8 @@ elif answer==1:
     answer=int(input("Souhaitez-vous créer un compte?(0=Oui/1=Non) : "))
     if answer == 0:
         account_name = input("Veuillez definir un identifiant de compte : ")
-        account_pin = int(input("Veuillez definir un mot de passe : "))
-        print("Votre compte à ete créé avec succès. Saisissez votre identifiant et mot de passe pour vous y connecter.")
+        account_pin = int(input("Veuillez definir un code PIN : "))
+        print("\nVotre compte à ete créé avec succès. Saisissez votre identifiant et code PIN vous y connecter.")
         familyname = str(input("Entrez votre identifiant de compte : "))
         
         if familyname == account_name:
@@ -111,5 +111,5 @@ if coin2 > 0:
     print(coin2, "pièce(s) de 2€")
 if coin1 > 0:
     print(coin1, "pièce(s) de 1€")
-print("Merci de vortre visite. ")
+print("Merci de votre visite. ")
 print(f"Il reste {argent-argent_a_retirer}€ sur votre compte. Au revoir.")

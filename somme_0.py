@@ -1,7 +1,12 @@
  
 import random
 import sys
-
+print("===================================")
+print("===================================")
+print("======DISTRIBUTEUR DE BILLETS======")
+print("===================================")
+print("===================================")
+sentence = ""
 argent = random.randint(0, 4753)
 answer=int(input("Bonjour. Possedez-vous déjà un compte bancaire?(0=Oui/1=Non) : "))
 if answer==0:
@@ -9,7 +14,7 @@ if answer==0:
 
     if familyname == "Monnier":
         argent = -993
-        sentence ="Vous ne pouvez en consequance retirer aucune somme d'argent. La pauvreté ne vous guette plus, elle vous a déjà attrapé mon ami."
+        sentence = "Vous êtes a decouvert et ne pouvez donc pas retirer d'argent.\nOn se revoit en fin de mois."
         pin = int(input("Entrez votre PIN : "))
         while pin != 6732:
             print("PIN incorrect. Veuillez reessayer.")
@@ -17,9 +22,9 @@ if answer==0:
             
     else:
         print("Votre identifiant ne figure pas dans notre base de données. Au revoir")
-        answer=int(input("Souhaitez-vous créer un compte?(0=Oui/1=Non) : "))
+        sys.exit()
 elif answer==1:
-    sentence = ""
+    
     answer=int(input("Souhaitez-vous créer un compte?(0=Oui/1=Non) : "))
     if answer == 0:
         account_name = input("Veuillez definir un identifiant de compte : ")
@@ -48,7 +53,7 @@ else:
     print("Au revoir.")
     sys.exit()
 print("Connection effectuée avec succès")
-print(f"Vous avez {argent}€ sur votre compte. {sentence}")
+print(f"Vous avez {argent}€ sur votre compte.{sentence}")
 if argent <0:
     sys.exit()
 answer = int(input("Le plafond s'eleve à 999€. Voulez vous retirer de l'argent ?(0=Oui/1=Non) : "))
@@ -106,4 +111,5 @@ if coin2 > 0:
     print(coin2, "pièce(s) de 2€")
 if coin1 > 0:
     print(coin1, "pièce(s) de 1€")
-print(f"Merci de vortre visite. Il reste {argent-argent_a_retirer}€ sur votre compte. Au revoir.")
+print("Merci de vortre visite. ")
+print(f"Il reste {argent-argent_a_retirer}€ sur votre compte. Au revoir.")

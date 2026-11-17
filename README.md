@@ -4,7 +4,7 @@ Bonjour tt le monde
 print("Bonjour")
 
 
-print("DISTRIBUTEUR DE BILLETS")
+print("ATM")
 
 argent = int(input("Montant à retirer : "))
 
@@ -39,4 +39,8 @@ else:
         print(billets10, "billet(s) de 10 €")
 
 
-voila ca normalement ca fonctionne 
+ca ca fonctionne normalement
+
+
+
+ok j'ai fait le script du distributeur j'veux bien que y'en ai un de vous deux qui face l'interface 

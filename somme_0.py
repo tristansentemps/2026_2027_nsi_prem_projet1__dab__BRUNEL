@@ -8,44 +8,44 @@ print("===================================")
 print("===================================")
 sentence = ""
 argent = random.randint(0, 4753)
-answer=int(input("Bonjour. Possedez-vous déjà un compte bancaire?(0=Oui/1=Non) : "))
+answer=float(input("Bonjour. Possedez-vous déjà un compte bancaire?(0=Oui/1=Non) : "))
 if answer==0:
     familyname = str(input("Entrez votre identifiant de compte : "))
 
     if familyname == "Monnier":
         argent = -993
         sentence = "Vous êtes a decouvert et ne pouvez donc pas retirer d'argent.\nOn se revoit en fin de mois."
-        pin = int(input("Entrez votre PIN : "))
+        pin = float(input("Entrez votre PIN : "))
         while pin != 6732:
             print("PIN incorrect. Veuillez reessayer.")
-            pin = int(input("Entrez votre PIN : "))
+            pin = float(input("Entrez votre PIN : "))
             
     else:
         print("Votre identifiant ne figure pas dans notre base de données. Au revoir")
         sys.exit()
 elif answer==1:
     
-    answer=int(input("Souhaitez-vous créer un compte?(0=Oui/1=Non) : "))
+    answer=float(input("Souhaitez-vous créer un compte?(0=Oui/1=Non) : "))
     if answer == 0:
         account_name = input("Veuillez definir un identifiant de compte : ")
-        account_pin = int(input("Veuillez definir un code PIN (Seul les chiffres sont acceptés): "))
+        account_pin = float(input("Veuillez definir un code PIN (Seul les chiffres sont acceptés): "))
         print("\nVotre compte à ete créé avec succès. Saisissez votre identifiant et code PIN vous y connecter.")
         familyname = str(input("Entrez votre identifiant de compte : "))
         
         if familyname == account_name:
-            pin = int(input("Entrez votre PIN : "))
+            pin = float(input("Entrez votre PIN : "))
             while pin != account_pin:
                 print("PIN incorrect. Veuillez reessayer.")
-                pin = int(input("Entrez votre PIN : "))
+                pin = float(input("Entrez votre PIN : "))
         else:
             print("Votre identifiant ne figure pas dans notre base de données.")
-            answer=int(input("Souhaitez-vous créer un compte?(0=Oui/1=Non) : "))
+            answer=float(input("Souhaitez-vous créer un compte?(0=Oui/1=Non) : "))
     elif answer ==1:
         print("Merci de votre visite. Au revoir.")
         sys.exit()
     else:
         print("Veuillez choisir un nombre entre 0 (Oui) et 1 (Non). ")
-        answer=int(input("Souhaitez-vous créer un compte?(0=Oui/1=Non) : "))
+        answer=float(input("Souhaitez-vous créer un compte?(0=Oui/1=Non) : "))
         
 
 
@@ -74,7 +74,7 @@ elif answer==1:
     sys.exit()
 else:
     print("Veuillez choisir entre 0 et 1")
-    answer = int(input("Voulez vous retirer de l'argent ?(0/1) : "))
+    answer = float(input("Voulez vous retirer de l'argent ?(0/1) : "))
     
 bill100 = argent_a_retirer//100
 reste = argent_a_retirer%100

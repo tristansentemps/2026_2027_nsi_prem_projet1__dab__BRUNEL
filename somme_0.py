@@ -28,7 +28,7 @@ elif answer==1:
     answer=int(input("Souhaitez-vous créer un compte?(0=Oui/1=Non) : "))
     if answer == 0:
         account_name = input("Veuillez definir un identifiant de compte : ")
-        account_pin = int(input("Veuillez definir un code PIN : "))
+        account_pin = int(input("Veuillez definir un code PIN (Seul les chiffres sont acceptés): "))
         print("\nVotre compte à ete créé avec succès. Saisissez votre identifiant et code PIN vous y connecter.")
         familyname = str(input("Entrez votre identifiant de compte : "))
         
@@ -50,7 +50,7 @@ elif answer==1:
 
 
 else:
-    print("Au revoir.")
+    print("Merci de votre visite. Au revoir.")
     sys.exit()
 print("Connection effectuée avec succès")
 print(f"Vous avez {argent}€ sur votre compte.{sentence}")
@@ -59,7 +59,7 @@ if argent <0:
 answer = int(input("Le plafond s'eleve à 999€. Voulez vous retirer de l'argent ?(0=Oui/1=Non) : "))
 if answer == 0:
     while True:
-        argent_a_retirer = int(input("Combien d'argent voulez-vous retirer ? : "))
+        argent_a_retirer = float(input("Combien d'argent voulez-vous retirer ? : "))
 
         if argent_a_retirer <= 0 or argent_a_retirer > argent:
             print("Montant incorrect.")
@@ -70,7 +70,8 @@ if answer == 0:
         else:
             break
 elif answer==1:
-    print("Au revoir.")
+    print("Merci de votre visite. Au revoir.")
+    sys.exit()
 else:
     print("Veuillez choisir entre 0 et 1")
     answer = int(input("Voulez vous retirer de l'argent ?(0/1) : "))
@@ -94,6 +95,19 @@ coin2 = reste//2
 reste = reste%2
 
 coin1 = reste//1
+reste = reste%1
+
+coin05 = reste//0.5
+reste = reste%0.5
+
+coin02 = reste//0.2
+reste = reste%0.2
+
+coin01 = reste//0.1
+reste = reste%0.1
+
+coin001 = reste//0.01
+reste = reste%0.01
 
 
 print("Billet(s) distribué(s) : ")
@@ -111,5 +125,14 @@ if coin2 > 0:
     print(coin2, "pièce(s) de 2€")
 if coin1 > 0:
     print(coin1, "pièce(s) de 1€")
+if coin05 > 0:
+    print(coin05, "pièce(s) de 50 centimes")
+if coin02 > 0:
+    print(coin02, "pièce(s) de 20 centimes")
+if coin01 > 0:
+    print(coin01, "pièce(s) de 10 centimes")
+if coin001 > 0:
+    print(coin001, "pièce(s) de 1 centime")
+
 print("Merci de votre visite. ")
 print(f"Il reste {argent-argent_a_retirer}€ sur votre compte. Au revoir.")

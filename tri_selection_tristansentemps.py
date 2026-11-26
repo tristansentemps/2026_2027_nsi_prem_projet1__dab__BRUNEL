@@ -37,3 +37,7 @@ def programme_principal():
     afficher(liste)
 
 programme_principal()
+
+
+
+print(1.5 +1.75+ 0.8+ 0.75+ 0.5+ 1.5+ 0.5+ 1.5 +0.5+2 )
